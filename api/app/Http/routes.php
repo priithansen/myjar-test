@@ -29,3 +29,12 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
+
+Route::group(['prefix' => 'api/v1/client'], function() {
+
+    // Product api-s
+    Route::get('products', 'ProductsController@getAllProducts');
+    Route::get('products/{product_id}', 'ProductsController@getProductById');
+
+});
+
