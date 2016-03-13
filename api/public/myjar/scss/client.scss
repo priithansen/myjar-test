@@ -46,9 +46,39 @@
 .vantage-request {
 
 	padding-top: 32px;
+
+	.tabs {
+		display: block;
+		list-style-type: none;
+		padding: 0;
+
+		// imitate .container object
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1200px;
+
+		.tab {
+			display: inline-block;
+			background-color: #cbe9f8;
+			border: 3px solid #fff;
+			border-bottom-width: 0px;
+			border-radius: 20px 20px 0 0;
+			padding: 5px;
+			a {
+				color: #fff;
+				text-decoration: none;
+				padding-left: 40px;
+				padding-right: 40px;
+			}
+		}
+		.tab.active {
+			position: relative;
+			top: 3px;
+		}
+	}
 	.container {
-		padding-left: 45px;
-		padding-right: 45px;
+		padding: 45px;
+		border: 3px solid #fff;
 	}
 	.request-header {
 		margin-bottom: 22px;

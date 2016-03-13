@@ -67,4 +67,17 @@ angular.module('client.services', []).
 				});
 			}
 		}
+	}]).
+
+	factory('productFactory', ['$http', function($http) {
+		return {
+
+			getAllProducts: function() {
+				return $http({
+					method: 'get',
+					url: 'api/v1/client/products'
+				});
+			}
+
+		}
 	}]);

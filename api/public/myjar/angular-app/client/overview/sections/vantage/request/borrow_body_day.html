@@ -1,2 +1,3 @@
 <h2>[[ exampleLoan ? 'LOANS UP TO 3 MONTHS' : 'I am borrowing for']]</h2>
-<div slider="day" class="borrow-slider day"></div>
+<div ng-if="activeProduct.days_min !== activeProduct.days_max" slider="day" class="borrow-slider day"></div>
+<h2 ng-if="activeProduct.days_min === activeProduct.days_max" class="large">[[ activeProduct.days_max ]] Days</h2>

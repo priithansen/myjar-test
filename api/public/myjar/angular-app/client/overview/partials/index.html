@@ -1,11 +1,18 @@
 <section class="sec-borrow vantage-request" ng-controller="ClientOverviewController" ng-if="loanDuration > 0">
-	<div class="container">
+
+	<ul class="tabs">
+		<li class="tab" ng-class="{ 'active': (activeProduct === product) }" ng-repeat="product in products" style="background-color: [[ product.color ]]">
+			<a ng-click="selectProduct(product)">[[ product.name ]] - [[ product.interest_per_day_pct * 100 ]]% per day</a>
+		</li>
+	</ul>
+
+	<div class="container" style="background-color: [[ activeProduct.color ]]">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="request-header text-center" style="text-align: center">
-					<h1>Borrow for up to 3 months</h1>
+					<h1>Borrow for [[ activeProduct.days_min === activeProduct.days_max ? "" : "up to" ]] [[ activeProduct.name ]]</h1>
 					<p>Repay monthly on your pay day or earlier if it suits you</p>
-					<p>Rate <strong>0.8%</strong> per day</p>
+					<p>Rate <strong>[[ activeProduct.interest_per_day_pct * 100 ]]%</strong> per day</p>
 				</div>
 			</div>
 		</div>
